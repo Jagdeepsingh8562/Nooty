@@ -27,9 +27,13 @@ class NotebooksViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemBackground
+    setupView()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     title = "Notebooks"
     navigationController?.navigationBar.prefersLargeTitles = true
-    setupView()
   }
   
   private func setupView() {
@@ -72,6 +76,9 @@ extension NotebooksViewController: UICollectionViewDataSource, UICollectionViewD
     
     cell.titleLabel.text = "Somethings"
     return cell
+  }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    navigationController?.pushViewController(NotesViewController(), animated: true)
   }
 }
 extension NotebooksViewController {

@@ -55,7 +55,7 @@ class SkipSignInView: UIView {
   
   @objc func skipButtonChicked(){
     
-    guard let delegate = delegate else {
+    guard let delegate = self.delegate else {
       return
     }
 

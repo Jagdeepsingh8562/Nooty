@@ -17,6 +17,7 @@ class NoteDetailViewController: UIViewController {
     textView.text = "Your Note here..."
     textView.textColor = UIColor.lightGray
     textView.textContainerInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
+    textView.isScrollEnabled = false
     return textView
   }()
   
