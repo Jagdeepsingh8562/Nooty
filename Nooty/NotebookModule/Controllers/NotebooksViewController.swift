@@ -84,7 +84,7 @@ extension NotebooksViewController {
     let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                            heightDimension: .absolute(180))
     let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-    let spacing = CGFloat(30)
+    let spacing = CGFloat(20)
     group.interItemSpacing = .fixed(spacing)
     
     let section = NSCollectionLayoutSection(group: group)
