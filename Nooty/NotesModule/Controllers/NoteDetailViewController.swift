@@ -67,7 +67,7 @@ class NoteDetailViewController: UIViewController {
     navigationController?.navigationBar.tintColor = UIColor.systemPurple
     setupScrollView()
     setupMoreButton()
-    setupSeperatorView()
+    //setupSeperatorView()
     setuptTitleField()
     setupTextView()
   }
@@ -98,13 +98,14 @@ class NoteDetailViewController: UIViewController {
   
   private func setuptTitleField() {
     containerView.addSubview(titleField)
-    titleField.centerInView(centerX: nil, centerY: seperatorView.centerYAnchor)
+   // titleField.centerInView(centerX: nil, centerY: seperatorView.centerYAnchor)
+    titleField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     titleField.anchor(
-      left: seperatorView.trailingAnchor,
-      top: nil,
+      left: containerView.leadingAnchor,
+      top: containerView.safeAreaLayoutGuide.topAnchor,
       right: containerView.trailingAnchor,
       bottom: nil,
-      paddingLeft: 10,
+      paddingLeft: 15,
       paddingTop: 0,
       paddingRight: 8,
       paddingBottom: 0
@@ -116,7 +117,7 @@ class NoteDetailViewController: UIViewController {
     
     textView.anchor(
       left: containerView.leadingAnchor,
-      top: seperatorView.bottomAnchor,
+      top: titleField.bottomAnchor,
       right: containerView.trailingAnchor,
       bottom: containerView.bottomAnchor,
       paddingLeft: 15,
